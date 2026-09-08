@@ -1,0 +1,689 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background:
+        radial-gradient(circle at top, #3a102d 0%, #160914 45%, #080308 100%);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* ========================= */
+/* CORAZONES */
+/* ========================= */
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    opacity: 0.7;
+    animation-name: floatHeart;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* ========================= */
+/* LOGIN */
+/* ========================= */
+
+.login-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 45px 30px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5);
+
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.heart-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+.login-card h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.login-card p {
+    color: #e8cddd;
+    line-height: 1.7;
+}
+
+.password-box {
+    margin-top: 25px;
+}
+
+.password-box input {
+    width: 100%;
+    padding: 15px 18px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+
+    font-size: 16px;
+    text-align: center;
+}
+
+.password-box input::placeholder {
+    color: #cdb5c7;
+}
+
+.password-box button {
+    width: 100%;
+    margin-top: 12px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4d88,
+        #b92767
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.password-box button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 50, 120, 0.35);
+}
+
+.error-message {
+    min-height: 25px;
+    margin-top: 12px;
+    color: #ff9fbd !important;
+}
+
+.login-card small {
+    display: block;
+    margin-top: 20px;
+    color: #a98d9f;
+}
+
+
+/* ========================= */
+/* OCULTAR */
+/* ========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ========================= */
+/* CONTENIDO */
+/* ========================= */
+
+#mainContent {
+    position: relative;
+    z-index: 1;
+    animation: contentAppear 1s ease;
+}
+
+@keyframes contentAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+.small-title {
+    letter-spacing: 5px;
+    font-size: 12px;
+    color: #e9a4bd;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(60px, 13vw, 110px);
+    line-height: 1;
+    font-weight: 600;
+}
+
+.subtitle {
+    max-width: 600px;
+    margin-top: 25px;
+    color: #d8bdcc;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.subtitle strong {
+    color: white;
+}
+
+
+/* ========================= */
+/* CONTADOR */
+/* ========================= */
+
+.counter-section {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.counter-section h2,
+.photos-section h2,
+.story-card h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    margin-bottom: 35px;
+}
+
+.counter {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.counter-box {
+    padding: 25px 10px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+}
+
+.counter-box span {
+    display: block;
+
+    font-size: 38px;
+    font-weight: 600;
+
+    color: #ff9cbd;
+}
+
+.counter-box small {
+    color: #cdb5c7;
+}
+
+
+/* ========================= */
+/* MENSAJE */
+/* ========================= */
+
+.message-section {
+    padding: 70px 20px;
+}
+
+.message-card {
+    width: 100%;
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 45px 35px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(12px);
+
+    text-align: center;
+}
+
+.quote {
+    font-size: 35px;
+}
+
+.message-card h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    margin: 10px 0 25px;
+}
+
+.message-card p {
+    color: #dbc5d1;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.special-message {
+    color: #ffabc7 !important;
+    font-size: 18px;
+}
+
+
+/* ========================= */
+/* FOTOS */
+/* ========================= */
+
+.photos-section {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.photos {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.photo-card {
+    background: rgba(255, 255, 255, 0.07);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    transition: 0.4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 320px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.photo-card p {
+    padding: 18px;
+
+    color: #d8bdcc;
+    font-size: 14px;
+}
+
+
+/* ========================= */
+/* HISTORIA */
+/* ========================= */
+
+.story-section {
+    padding: 70px 20px;
+}
+
+.story-card {
+    width: 100%;
+    max-width: 750px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 45px 35px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.story-card p {
+    color: #d9c2cf;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.final-text {
+    font-size: 25px;
+    color: #ffabc7 !important;
+}
+
+
+/* ========================= */
+/* SORPRESA */
+/* ========================= */
+
+.surprise-section {
+    padding: 80px 20px;
+
+    text-align: center;
+}
+
+.surprise-button {
+    border: none;
+
+    padding: 17px 30px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4d88,
+        #b92767
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.surprise-button:hover {
+    transform: scale(1.05);
+}
+
+.surprise-message {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 40px auto 0;
+
+    padding: 45px 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    animation: surpriseAppear 0.8s ease;
+}
+
+@keyframes surpriseAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.big-heart {
+    font-size: 70px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.surprise-message h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.surprise-message p {
+    color: #ddc6d3;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.love-text {
+    color: #ffabc7 !important;
+    font-size: 20px;
+}
+
+.hearts-text {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: #987f90;
+
+    font-size: 13px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 700px) {
+
+    .login-card {
+        padding: 35px 22px;
+    }
+
+    .login-card h1 {
+        font-size: 38px;
+    }
+
+    .hero {
+        min-height: 65vh;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .counter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .counter-box span {
+        font-size: 32px;
+    }
+
+    .counter-section h2,
+    .photos-section h2,
+    .story-card h2 {
+        font-size: 35px;
+    }
+
+    .message-card,
+    .story-card {
+        padding: 35px 22px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 380px;
+    }
+    /* =========================
+   CAJA DE MÚSICA
+========================= */
+
+.music-box {
+    margin-top: 30px;
+    padding: 25px 20px;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.music-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+
+    animation: musicPulse 1.5s infinite;
+}
+
+.music-box h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.music-box p {
+    margin-bottom: 20px;
+}
+
+.music-box audio {
+    width: 100%;
+    max-width: 450px;
+}
+
+
+/* Animación de la música */
+
+@keyframes musicPulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+}
